@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Расчёт КПД цикла Карно",
+      "method": "POST",
+      "path": "/",
+      "body": {"action": "calc", "calc_type": "carnot", "params": {"T_hot": 600, "T_cold": 300}},
+      "expectedStatus": 200,
+      "expectedBody": {"calc_type": "carnot"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Расчёт изменения энтропии",
+      "method": "POST",
+      "path": "/calc",
+      "body": {"calc_type": "entropy", "params": {"Q": 1000, "T": 300}},
+      "expectedStatus": 200,
+      "expectedBody": {"calc_type": "entropy"},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "ИИ-чат без проекта",
+      "method": "POST",
+      "path": "/chat",
+      "body": {"message": "что такое энтропия"},
+      "expectedStatus": 200,
+      "expectedBody": {"reply": ""},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Получить схему проекта",
+      "method": "GET",
+      "path": "/?project_id=1",
+      "expectedStatus": 200,
+      "expectedBody": {"components": [], "connections": []},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

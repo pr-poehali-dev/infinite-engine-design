@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Получить список проектов",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"projects": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Создать проект",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест двигатель", "description": "Тестовый проект"},
+      "expectedStatus": 201,
+      "expectedBody": {"message": "Проект создан"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
